@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="ぎふ市民健康まつりの気血水体質チェック。チェックシートに沿って体質を確認し、レーダーグラフで結果を表示します。"
+    />
+    <title>気血水　体質チェック｜ぎふ市民健康まつり</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js" defer></script>
+  </head>
+  <body>
+    <div class="page-bg" aria-hidden="true"></div>
+
+    <header class="hero">
+      <div class="hero__media">
+        <img src="img/hero-wellness.jpg" alt="" class="hero__img" width="1600" height="900" />
+        <div class="hero__veil"></div>
+      </div>
+      <div class="wrap hero__content">
+        <img src="img/logo-mark.jpg" alt="" class="hero__logo" width="88" height="88" />
+        <p class="eyebrow" id="event-name">ぎふ市民健康まつり</p>
+        <h1 id="app-title">気血水　体質チェック</h1>
+        <p class="lead" id="app-lead">
+          あなたはどのタイプ？該当する□にチェックしてください。
+        </p>
+        <p class="organizer" id="organizer-name">（一社）岐阜市薬剤師会</p>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="intro-strip panel">
+        <img src="img/type-icons.jpg" alt="6つの体質タイプのイメージ" class="intro-strip__img" />
+        <div class="intro-strip__text">
+          <h2>6つの体質タイプ</h2>
+          <p>
+            <strong>足りていない</strong>（気虚・血虚・陰虚）と
+            <strong>巡りが悪い</strong>（気滞・瘀血・水滞）に分かれてチェックします。
+            当てはまる項目が多いほど、その傾向が強くなります。
+          </p>
+        </div>
+      </section>
+
+      <section id="check-section" class="panel" aria-labelledby="check-heading">
+        <div class="panel-head">
+          <h2 id="check-heading" class="panel-title">チェックシート</h2>
+          <p class="panel-note">各タイプ10項目／合計を見ながらチェック</p>
+        </div>
+
+        <form id="check-form">
+          <div id="checklist"></div>
+
+          <div class="sticky-bar">
+            <div class="sticky-bar__total">
+              全体のチェック
+              <strong><span id="sticky-total">0</span>個</strong>
+            </div>
+            <button type="submit" class="btn btn-primary">結果を見る</button>
+          </div>
+        </form>
+      </section>
+
+      <section id="results" class="panel panel-results" hidden aria-labelledby="results-heading">
+        <div class="panel-head">
+          <h2 id="results-heading" class="panel-title">診断結果</h2>
+          <p class="panel-note">体質バランスグラフ　気･血･水</p>
+        </div>
+
+        <p id="result-headline" class="result-headline"></p>
+
+        <div class="chart-card">
+          <div class="chart-wrap">
+            <canvas id="score-chart" aria-label="体質バランスのレーダーグラフ"></canvas>
+          </div>
+        </div>
+
+        <div id="score-summary" class="score-summary" aria-label="体質ごとの点数"></div>
+        <div id="result-types" class="result-types"></div>
+        <p id="result-disclaimer" class="disclaimer"></p>
+
+        <div class="form-actions">
+          <button type="button" id="back-to-check" class="btn btn-secondary">チェックに戻る</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <img src="img/logo-mark.jpg" alt="" width="48" height="48" />
+        <div>
+          <p class="footer-event">ぎふ市民健康まつり</p>
+          <p>（一社）岐阜市薬剤師会</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

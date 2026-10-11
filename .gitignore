@@ -1,0 +1,12 @@
+# 大きな資料（Web公開には不要）
+*.pdf
+*.pptx
+*.zip
+
+# 一時ファイル
+_pptx_extract/
+_pptx.zip
+.DS_Store
+Thumbs.db
+node_modules/
+.vscode/
